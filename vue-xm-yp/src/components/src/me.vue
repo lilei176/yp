@@ -20,19 +20,19 @@
       </div>
     </div>
     <div class="administration">
-      <div class="administration-list" v-for="(item,i) of 4" :key="i">
-        <img src="image/personal_icon_paid.png" alt="">
-        <span>待付款</span>
+      <div class="administration-list" v-for="(item,i) of await" :key="i">
+        <img :src="item.img" alt="">
+        <span>{{item.title}}</span>
       </div>
     </div>
     <div class="img-180">
       <a href=""><img src="image/df15.png" /></a>
     </div>
-    <div class="container"  v-for="(item,i) of 7" :key="i">
+    <div class="container"  v-for="(item,i) of arrtitle" :key="i">
       <div class="myorder">
         <div class="myorder-img">
           <img src="image/personal_icon_assets.png" alt="">
-          <span>我的资产</span>
+          <span>{{item}}</span>
         </div>
         <div class="next">
           <img src="image/device_shop_right_arrow.png" alt="">
@@ -48,7 +48,8 @@
 export default {
   data(){
     return{
-      
+      await:[{title:'待付款',img:'image/personal_icon_paid.png'},{title:'待收货',img:'image/personal_icon_paid.png'},{title:'待评价',img:'image/personal_icon_paid.png'},{title:'退款订单',img:'image/personal_icon_paid.png'}],
+      arrtitle:['我的资产','拼团','我的收藏','地址管理','资质证照','协议规则']
     }
   },
   components:{
